@@ -1,0 +1,23 @@
+{
+  "skill_name": "ai-launch-radar",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Scan the last 72 hours across GitHub, X, and Product Hunt for AI products that are just entering validation. I do not want a generic hot list. Give me 5 strong Picks and a wider Watchlist, and tell me which ones look more like build opportunities versus write opportunities.",
+      "expected_output": "A structured AI Launch Radar report with Picks and Watchlist, using opportunity_score, content_score, confidence_score, recommended_action, and angle.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I run a small AI product studio. Find under-covered AI launches from the last 48 hours that might reveal product wedges or demand patterns. Bias slightly toward product opportunities, but still call out anything that is mainly a strong content angle.",
+      "expected_output": "A balanced but product-leaning radar report that separates product opportunities from content opportunities and avoids requiring every candidate to appear on multiple platforms.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I write about early AI product trends. Look for launches from the last 24 to 72 hours where the discussion is unusually interesting on X or Product Hunt, even if the product is not open source. I want the best story angles plus a short watchlist of things to monitor.",
+      "expected_output": "A content-leaning radar report that accepts strong single-source signals, explains why each pick matters now, and includes recommended_action plus angle.",
+      "files": []
+    }
+  ]
+}
