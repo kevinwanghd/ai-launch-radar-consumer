@@ -5,7 +5,8 @@
   "type": "module",
   "main": "fetch-central-data.js",
   "scripts": {
-    "fetch": "node fetch-central-data.js"
+    "fetch": "node fetch-central-data.js",
+    "generate-radar": "node generate-radar.mjs"
   },
   "keywords": [
     "ai",

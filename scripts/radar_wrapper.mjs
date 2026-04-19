@@ -5,7 +5,6 @@ import { fileURLToPath } from "node:url";
 
 export const DEFAULT_OBSIDIAN_BASE_DIR = "C:/Users/kevin/Documents/Obsidian Vault/AI Launch Radar";
 const VALID_SOURCE_STATUS = new Set(["ok", "degraded", "unavailable"]);
-const VALID_SIMPLE_SOURCE_STATUS = new Set(["ok", "unavailable"]);
 
 function pad2(value) {
   return String(value).padStart(2, "0");
@@ -134,8 +133,8 @@ export function interpretPhCollectionResult(phCollection = null) {
 }
 
 function normalizeSimpleSourceStatus(status, sourceName) {
-  if (!VALID_SIMPLE_SOURCE_STATUS.has(status)) {
-    throw new Error(`Invalid ${sourceName} status: expected ok or unavailable`);
+  if (!VALID_SOURCE_STATUS.has(status)) {
+    throw new Error(`Invalid ${sourceName} status: expected ok, degraded, or unavailable`);
   }
   return status;
 }
