@@ -185,10 +185,11 @@ async function main() {
   });
 
   const { filePath } = buildDailyRadarPath({ date: args.date });
+  const targetFilePath = args.write ? filePath : null;
   const metrics = extractReportMetrics(noteContent);
   const summary = summarizeForFeishu({
     status: githubExport.status === "ok" ? "ok" : "degraded",
-    filePath,
+    filePath: targetFilePath,
     ...metrics,
   });
 
@@ -199,7 +200,8 @@ async function main() {
 
   process.stdout.write(JSON.stringify({
     status: githubExport.status === "ok" ? "ok" : "degraded",
-    filePath,
+    filePath: targetFilePath,
+    write: args.write,
     noteContent,
     reportBody,
     ...summary,
