@@ -7,7 +7,8 @@
   "scripts": {
     "fetch": "node fetch-central-data.js",
     "generate-radar": "node generate-radar.mjs",
-    "run-radar": "node run-radar.mjs"
+    "run-radar": "node run-radar.mjs",
+    "sync-easyclaw": "node sync-to-easyclaw.mjs"
   },
   "keywords": [
     "ai",
